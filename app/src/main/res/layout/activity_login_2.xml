@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<TextView
+		android:id="@+id/main_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Ready to nimber?"
+		tools:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+		android:textColor="@color/black"
+		android:textSize="24sp"
+		android:textStyle="bold"
+		app:layout_constraintBottom_toTopOf="@id/secondary_title"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_chainStyle="packed" />
+
+	<TextView
+		android:id="@+id/secondary_title"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="64dp"
+		android:layout_marginEnd="64dp"
+		android:gravity="center"
+		android:padding="8dp"
+		android:text="Setting up an account is easy! First select a way to sign up:"
+		app:layout_constraintBottom_toTopOf="@id/Facebook"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/main_title" />
+
+
+	<Button
+		android:id="@+id/Facebook"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:width="90dp"
+		android:height="90dp"
+		android:backgroundTint="#0000FF"
+		android:text="F"
+		android:textAllCaps="false"
+		app:layout_constraintBottom_toTopOf="@id/Google"
+		app:layout_constraintEnd_toStartOf="@id/Twitter"
+		app:layout_constraintHorizontal_chainStyle="packed"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_chainStyle="packed" />
+
+
+	<Button
+		android:id="@+id/Twitter"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="32dp"
+		android:width="90dp"
+		android:height="90dp"
+		android:text="T"
+		android:textAllCaps="false"
+		app:layout_constraintBottom_toBottomOf="@id/Facebook"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@id/Facebook"
+		app:layout_constraintTop_toTopOf="@id/Facebook" />
+
+	<Button
+		android:id="@+id/Google"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="16dp"
+		android:width="90dp"
+		android:height="90dp"
+		android:text="G"
+		android:textAllCaps="false"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="@id/Facebook"
+		app:layout_constraintTop_toBottomOf="@id/Facebook" />
+
+	<Button
+		android:id="@+id/Email"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:width="90dp"
+		android:height="90dp"
+		android:text="E"
+		android:textAllCaps="false"
+		app:layout_constraintBottom_toBottomOf="@id/Google"
+		app:layout_constraintEnd_toEndOf="@id/Twitter"
+		app:layout_constraintStart_toStartOf="@id/Twitter"
+		app:layout_constraintTop_toTopOf="@id/Google" />
+
+
+	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/guideline_buttons"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.7" />
+
+	<Button
+		android:id="@+id/textFooterButton"
+		style="@style/Widget.MaterialComponents.Button.TextButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Already have a nimber account?"
+		android:textColor="#FF0000"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="@id/guideline_buttons" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
