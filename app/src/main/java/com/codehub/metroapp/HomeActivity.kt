@@ -1,6 +1,7 @@
 package com.codehub.metroapp
 
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
@@ -28,6 +29,8 @@ class HomeActivity : AppCompatActivity() {
 
         val username = intent.getStringExtra("username")
         Log.d("HOME", username.toString())
+
+        startActivity(Intent(this, OrderActivity::class.java))
 
         findViewById<Button>(R.id.home_finish).setOnClickListener {
             val intent = intent

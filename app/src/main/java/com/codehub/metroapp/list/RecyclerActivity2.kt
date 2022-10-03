@@ -1,13 +1,11 @@
 package com.codehub.metroapp.list
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.codehub.metroapp.R
 import com.codehub.metroapp.databinding.ActivityRecycler2Binding
 import com.codehub.metroapp.json.JsonDataResponse
 import com.codehub.metroapp.json.JsonResponse
@@ -25,6 +23,8 @@ class RecyclerActivity2 : AppCompatActivity() {
         setContentView(binding.root)
     }
 
+    private var isRunning : Boolean = false
+
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
 
@@ -32,7 +32,19 @@ class RecyclerActivity2 : AppCompatActivity() {
             Snackbar.make(it, "Clicked!!!", Snackbar.LENGTH_LONG).show()
         }
 
-        binding.recyclerView.adapter = RecyclerAdapter(listOf("A", "B", "C", "D"))
+        binding.recyclerView.adapter =
+            RecyclerAdapter(listOf("A", "B", "C", "D"), object : RecyclerAdapter.OnClick {
+                override fun onClick(data: String) {
+                    if(isRunning == false){
+                        isRunning = true
+                        //operation
+                        isRunning = false
+                    }else{
+                        Unit
+                    }
+                    TODO("Not yet implemented")
+                }
+            })
         binding.recyclerView.adapter = adapter
     }
 

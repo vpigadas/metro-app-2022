@@ -10,10 +10,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.codehub.metroapp.R
 
 class RecyclerAdapter : RecyclerView.Adapter<AbstractViewHolder> {
-    private val arrayData: List<String>
 
-    constructor(arrayData: List<String>) : super() {
+    interface OnClick {
+        fun onClick(data: String)
+    }
+
+    private val arrayData: List<String>
+    private val listener: OnClick
+
+    constructor(arrayData: List<String>, listener: OnClick) : super() {
         this.arrayData = arrayData
+        this.listener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AbstractViewHolder {
@@ -46,8 +53,10 @@ class RecyclerAdapter : RecyclerView.Adapter<AbstractViewHolder> {
 
 class RecyclerViewHolder(itemView: View) : AbstractViewHolder(itemView) {
 
-    override fun bind(data: String) {
+    override fun bind(data: String, listener: RecyclerAdapter.OnClick) {
         itemView.findViewById<TextView>(R.id.holder_text).text = data
+        itemView.findViewById<TextView>(R.id.holder_text)
+            .setOnClickListener { listener.onClick(data) }
     }
 }
 
